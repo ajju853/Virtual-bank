@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.App {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, color 0.3s;
+    animation: fadeIn 0.5s ease-in-out;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.dark {
+    background-color: rgba(44, 44, 44, 0.9);
+    color: #f0f2f5;
+}
+
+h1 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    font-size: 1.8em;
+}
+
+input {
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 12px;
+    background: rgba(240, 240, 240, 0.8);
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1),
+                inset -5px -5px 10px rgba(255, 255, 255, 0.7);
+    width: calc(100% - 24px);
+    transition: box-shadow 0.3s, background 0.3s, transform 0.3s;
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    outline: none;
+    transform: scale(1.02);
+}
+
+button {
+    padding: 12px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 12px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    font-size: 1em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+h3 {
+    margin-top: 20px;
+    color: #555;
+    font-size: 1.5em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+tr {
+    transition: transform 0.3s;
+}
+
+tr:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+    transform: scale(1.02);
+}
+
+.login-container {
+    margin-top: 20px;
+}
+
+.login-container input {
+    width: calc(100% - 24px);
+}
+
+.login-container button {
+    width: 100%;
+}
+
+.toggle-button {
+    margin: 10px 0;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.toggle-button:active {
+    transform: translateY(0);
+}
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.8); 
+  backdrop-filter: blur(10px); 
+  padding: 30px; 
+  border-radius: 20px; 
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); 
+  text-align: center;
+  animation: slideIn 0.3s ease-in-out;
+  transition: transform 0.3s ease; 
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateY(-50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.modal-content button {
+  margin: 10px;
+  padding: 12px 20px; 
+  border: none;
+  border-radius: 10px; 
+  background-color: #4CAF50; 
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; 
+}
+
+.modal-content button:hover {
+  background-color: #45a049; 
+  transform: scale(1.05); 
+}
+
+.modal-content button:active {
+  transform: scale(0.95); 
+}
+
+
+@media (max-width: 600px) {
+  .modal-content {
+      padding: 20px; 
+      width: 90%; 
+  }
+
+  .modal-content button {
+      width: 100%; 
+  }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(240, 240, 240, 0.8);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4CAF50;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #45a049;
+}
+
+@media (max-width: 600px) {
+  .App {
+      padding: 20px; 
+      border-radius: 15px; 
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+  }
+
+  h1 {
+      font-size: 2.2em; 
+      margin-bottom: 10px; 
+  }
+
+  h2 {
+      font-size: 1.6em; 
+      margin-bottom: 8px; 
+  }
+
+  h3 {
+      font-size: 1.4em; 
+      margin-bottom: 6px; 
+  }
+
+  button, .toggle-button {
+      padding: 12px; 
+      font-size: 1em; 
+      border-radius: 10px; 
+      transition: background-color 0.3s, transform 0.2s; 
+  }
+
+  button:hover, .toggle-button:hover {
+      transform: scale(1.05); 
+  }
+
+  input {
+      padding: 12px; 
+      font-size: 1em; 
+      border-radius: 10px; 
+  }
+}
